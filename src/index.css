@@ -1,13 +1,79 @@
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+  min-height: 100%
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card {
+  border-radius: 20px;
+  border: 1px solid #bacdd8;
+  margin: 20px;
+  min-width: 300px;
+  min-height: 300px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: transform .5s, box-shadow 1s;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  width: 90%;
+}
+.card figure {
+  width: 100%;
+  flex: 0 0 50%;
+  margin: 0%; 
+  display: block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-position: center;
+  background-size: cover;
+}
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.card summary {
+  padding: 8px;
+}
+.content {
+  padding: 32px;
+}
+.footer {
+  grid-area: footer;
+  background-color: darkgray;
+}
+.footer p{
+  text-align: center;
+  font-size: 10px;
+}
+.header {
+  background-color: darkblue;
+  color: white;
+  padding-left: 20px;
+  width: 100%;
+}
+.section-header {
+  grid-area: section-header;
+}
+.side {
+  grid-area: sidebar;
+  background-color: lightblue;
+  width: 320px;
+  padding: 32px;
+}
+@media only screen and (max-width: 1024px) {
+  .side {
+    grid-area: sidebar;
+    display: none;
+  }
+  .content {
+    padding: 32px;
+    grid-area: content;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "section-header"
+      "card";
+  }
 }
