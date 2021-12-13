@@ -54,27 +54,18 @@ body {
   padding-left: 20px;
   padding: 5px;
 }
-.section-header {
-  grid-area: section-header;
-}
+
 .side {
-  grid-area: sidebar;
   background-color: lightblue;
   width: 320px;
   padding: 32px;
+  height: 90%;
 }
 @media only screen and (max-width: 1024px) {
   .side {
-    grid-area: sidebar;
     display: none;
   }
   .content {
     padding: 32px;
-    grid-area: content;
-    display: inline-grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "section-header"
-      "card";
   }
 }
