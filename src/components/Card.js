@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button.js'
 
 const Card = ( {id = 1} ) => {
 
@@ -15,6 +16,7 @@ const Card = ( {id = 1} ) => {
         <p>{details}</p>
         {/* <p id="delete-${card.id}" style="color: darkred; text-decoration: underline" onClick="deleteCard(${card.id});"> Delete</p> */}
       </summary> 
+      <Button />
     </article>
   )
 }

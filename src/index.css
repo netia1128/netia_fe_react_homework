@@ -51,6 +51,10 @@ body {
   justify-content: space-around;
   flex-basis: 33.333333%
 }
+.delete-button {
+  background-color: red;
+  margin: 5px;
+}
 .footer {
   grid-area: footer;
   background-color: darkgray;
