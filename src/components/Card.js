@@ -8,7 +8,7 @@ const Card = ( {id = 1, key = 1} ) => {
 
   
   return (
-    <article className='card' key={id}> 
+    <article className='card'> 
       <figure className='card-item' style={{ backgroundImage: `url(${imageUrl})` }}>
       </figure>
       <summary className='card-details card-item'>
