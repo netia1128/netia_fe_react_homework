@@ -4,7 +4,6 @@ import Cards from './Cards.js'
 const Content = () => {
   return (
     <section className="content">
-      <h3 className="section-header">Cards</h3>
       <Cards />
     </section>
   )

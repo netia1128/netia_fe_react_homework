@@ -19,7 +19,9 @@ function App() {
             <Sidebar />
           </Col>
           <Col size={2}>
-            <Content />
+            <Row className='card-row'>
+              <Content />
+            </Row>
           </Col>
         </Row>
         <Row>
