@@ -1,6 +1,8 @@
 import React from 'react'
+import Button from './Button.js'
 
-const Card = ( {id = 1, key = 1} ) => {
+const Card = ( {id, deleteCard}) => {
+  console.log("CARD RENDER")
   const imageUrl = `https://picsum.photos/seed/card_${id}/800/800`;
   const header = generateCardText(1);
   const details = generateCardText(2);
@@ -14,6 +16,7 @@ const Card = ( {id = 1, key = 1} ) => {
         <h5>{header}</h5>
         <p>{details}</p>
       </summary> 
+      <Button id={id} deleteCard={deleteCard}/>
     </article>
   )
 }

@@ -1,13 +1,13 @@
 import React from 'react'
 import Card from './Card.js'
-import Button from './Button.js'
+import { useState, useEffect } from 'react';
 
 const generateNewCardDeck = (numCards = Math.floor(Math.random() * 9)) => {
   let cards = [];
 
   for (let i = numCards; i > 0; i--) {
-    const card = <Card id={i}/>
-    cards.unshift(card);
+    // const card = <Card id={i}/>
+    cards.unshift(i);
   }
 
   return cards
@@ -15,16 +15,20 @@ const generateNewCardDeck = (numCards = Math.floor(Math.random() * 9)) => {
 
 const Cards = () => {
 
-  let cards = generateNewCardDeck();
+  const [cards, setCards] = useState([]);
 
+  useEffect(() => {setCards(generateNewCardDeck())}, []);
+  
+  const deleteCard = (id) => {
+    setCards(cards.filter((card) => card !== id));
+  }
+  
   return (
-    <section>
-      {cards.map((card, index) => (
-        <article key={index}>{card}
-        <Button id={index + 1} cards={cards}/>
-        </article>
+    <>
+      {cards.map((card) => (
+        <Card key={card} id={card} deleteCard={deleteCard}/>
       ))}
-    </section>
+      </>
   )
 }
 
