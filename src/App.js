@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar.js';
 import Content from './components/Content.js';
 
 function App() {
+
   return (
     <div className="App">
       <Grid>

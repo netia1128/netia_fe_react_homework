@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button.js'
 
-const Card = ( {id = 1} ) => {
+const Card = ( {id = 1, cards} ) => {
 
   const imageUrl = `https://picsum.photos/seed/card_${id}/800/800`;
   const header = generateCardText(1);
@@ -14,9 +14,8 @@ const Card = ( {id = 1} ) => {
       <summary className='card-details card-item'>
         <h5>{header}</h5>
         <p>{details}</p>
-        {/* <p id="delete-${card.id}" style="color: darkred; text-decoration: underline" onClick="deleteCard(${card.id});"> Delete</p> */}
       </summary> 
-      <Button />
+      <Button cards={cards} id={id}/>
     </article>
   )
 }

@@ -1,6 +1,14 @@
-const Button = ({onClick}) => {
+import { useState } from 'react';
 
-  return <button className='delete-button'>
+const Button = ({cards, id}) => {
+
+  const [newCards, setCards] = useState(cards);
+
+  const deleteCard = (id) => {
+    setCards(cards.filter((card) => card.id !== id));
+  }
+
+  return <button className='delete-button' onClick={() => deleteCard(id)}>
             Delete
          </button>
 }
