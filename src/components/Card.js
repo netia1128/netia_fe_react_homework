@@ -1,21 +1,21 @@
 import React from 'react'
 import Button from './Button.js'
 
-const Card = ( {id = 1, cards} ) => {
-
+const Card = ( {id = 1, key = 1} ) => {
   const imageUrl = `https://picsum.photos/seed/card_${id}/800/800`;
   const header = generateCardText(1);
   const details = generateCardText(2);
+
   
   return (
-    <article className='card'> 
+    <article className='card' key={id}> 
       <figure className='card-item' style={{ backgroundImage: `url(${imageUrl})` }}>
       </figure>
       <summary className='card-details card-item'>
         <h5>{header}</h5>
         <p>{details}</p>
       </summary> 
-      <Button cards={cards} id={id}/>
+      <Button id={id}/>
     </article>
   )
 }
