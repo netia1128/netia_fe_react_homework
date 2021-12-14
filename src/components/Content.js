@@ -1,11 +1,11 @@
 import React from 'react'
-import Card from './Card'
+import Cards from './Cards.js'
 
 const Content = () => {
   return (
     <section className="content">
       <h3 className="section-header">Cards</h3>
-      <Card id={1}/>
+      <Cards />
     </section>
   )
 }
