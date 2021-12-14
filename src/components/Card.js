@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './Button.js'
 
 const Card = ( {id = 1, key = 1} ) => {
   const imageUrl = `https://picsum.photos/seed/card_${id}/800/800`;
@@ -15,7 +14,6 @@ const Card = ( {id = 1, key = 1} ) => {
         <h5>{header}</h5>
         <p>{details}</p>
       </summary> 
-      <Button id={id}/>
     </article>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './Card.js'
+import Button from './Button.js'
 
 const generateNewCardDeck = (numCards = Math.floor(Math.random() * 9)) => {
   let cards = [];
@@ -16,13 +17,12 @@ const Cards = () => {
 
   let cards = generateNewCardDeck();
 
-  console.log(cards)
-
-  ;
   return (
     <section>
       {cards.map((card, index) => (
-        <article key={index}>{card}</article>
+        <article key={index}>{card}
+        <Button id={index + 1} cards={cards}/>
+        </article>
       ))}
     </section>
   )
